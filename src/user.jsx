@@ -96,6 +96,9 @@ const User = () => {
     <div>
         <Outlet/>
     </div>
+    <div id="footer">
+        <p>It is on development. Delete function will be added soon.</p>
+    </div>
     </div>
     </>
   )
