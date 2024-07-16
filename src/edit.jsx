@@ -25,15 +25,15 @@ const Edit = () => {
     <table>
       <tbody>
         <tr>
-          <td>Name:</td>
+          <td>Edit Name:</td>
           <td><input type="text" ref={ref1}/></td>
         </tr>
         <tr>
-          <td>Dept:</td>
+          <td>Edit Description:</td>
           <td><textarea ref={ref2} rows='5'></textarea></td>
         </tr>
         <tr>
-          <td colSpan='2'><button onClick={edited} style={{width:'100%'}}>EDIT</button></td>
+          <td colSpan='2'><button onClick={edited} style={{width:'100%'}}>DONE</button></td>
         </tr>
       </tbody>
     </table>

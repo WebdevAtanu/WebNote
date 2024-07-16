@@ -15,7 +15,6 @@ body {
 	padding: 0.5rem;
 
 	& svg {
-		color: white;
 		float: left;
 
 		&:hover {
@@ -69,6 +68,8 @@ body {
 			font-size: 1rem;
 			margin-top: 0.5rem;
 			transition: all 0.2s;
+			font-family: "Bitter", serif;
+			border: 0.5px solid black;
 
 			&:hover {
 				transform: scale(0.97);
@@ -96,6 +97,23 @@ body {
 				color: #FFC107;
 			}
 
+		}
+
+	}
+
+	& button {
+		padding: 0.5rem;
+		background: linear-gradient(50deg, #a50101, #710c0c);
+		cursor: pointer;
+		color: white;
+		font-size: 1rem;
+		margin-top: 0.5rem;
+		transition: all 0.2s;
+		font-family: "Bitter", serif;
+		border: 0.5px solid black;
+
+		&:hover {
+			transform: scale(0.97);
 		}
 
 	}
@@ -191,6 +209,12 @@ body {
 	color: white;
 	width: 100%;
 	text-align: center;
+
+	& a {
+		text-decoration: none;
+		color: #36f2f4;
+	}
+
 }
 
 @media screen and (max-width:768px) {

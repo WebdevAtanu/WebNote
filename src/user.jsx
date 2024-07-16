@@ -8,14 +8,21 @@ const User = () => {
     let [index,setIndex]=useState(0);
     let [data,setData]=useState([]);
     let [alert,setAlert]=useState('');
+    let [flag,setFlag]=useState(false);
 
     // set the input data to local storage as well as table.
     const setter=()=>{
         let name=ref1.current.value;
         let dept=ref2.current.value;
-        if(name===''||null && dept===''||null)
+        if(name===''||null)
             {
-                setAlert('Oops! You forget to enter something.');
+                setAlert('Oops! You forget to enter task name.');
+                setTimeout(()=>{
+                    setAlert('');
+                },2000)
+            }
+            else if(dept===''||null){
+                setAlert('Oops! You forget to enter task description.');
                 setTimeout(()=>{
                     setAlert('');
                 },2000)
@@ -26,6 +33,7 @@ const User = () => {
                 setIndex(index+1);
                 ref1.current.value='';
                 ref2.current.value='';
+                setFlag(true);
             }
         
     }
@@ -40,8 +48,17 @@ const User = () => {
             obs=[...obs,objs];
             setData(obs);
         }
+        if(lLen!=0){
+            setFlag(true);
+        }
     },[])
 
+    const cleaner=()=>{
+        localStorage.clear();
+        setData([]);
+        setIndex(0);
+        setFlag(false);
+    }
     
   return (
     <>
@@ -93,11 +110,15 @@ const User = () => {
             }
         </tbody>
     </table>
+    {
+        flag?<button onClick={cleaner}>Clear All</button>:null
+    }
+    
     <div>
         <Outlet/>
     </div>
     <div id="footer">
-        <p>It is on development. Delete function will be added soon.</p>
+        <p>Looking for source code? <a href="https://github.com/WebdevAtanu/WebNote" target='_blank'>Click here</a></p>
     </div>
     </div>
     </>
